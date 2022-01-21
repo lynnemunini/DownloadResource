@@ -87,7 +87,7 @@ def secrets():
 # Ensure that the current user is logged in and authenticated before calling the actual view
 @login_required
 def download():
-    return send_from_directory('static/files', "cheat_sheet.pdf", as_attachment=True)
+    return send_from_directory('static/files', "doc.pdf", as_attachment=True)
 
 
 @app.route('/logout')
