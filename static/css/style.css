@@ -257,4 +257,15 @@ button {
     padding-left: 50px;
   }
 
+  .secrets-div{
+    width: auto;
+    margin: auto;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .secrets-div a:hover{
+    color: #fff;
+  }
+
 /*# sourceMappingURL=style.css.map */
