@@ -16,16 +16,23 @@
 				<div class="image-holder">
 					<img src="../static/images/signup.png" alt="">
 				</div>
-				<form action="">
+				<form action="{{ url_for('register') }}" method="post">
 					<h3>Sign Up</h3>
+					{% with messages = get_flashed_messages() %}
+					{% if messages %}
+					{% for message in messages %}
+					<p class=error>{{ message }}</p>
+					{% endfor %}
+					{% endif %}
+					{% endwith %}
 					<div class="form-holder active">
-						<input type="text" placeholder="name" class="form-control">
+						<input type="text" name="name" placeholder="Name" class="form-control" required="required">
 					</div>
 					<div class="form-holder">
-						<input type="text" placeholder="e-mail" class="form-control">
+						<input type="text" name="email" placeholder="Email" class="form-control" required="required">
 					</div>
 					<div class="form-holder">
-						<input type="password" placeholder="Password" class="form-control" style="font-size: 15px;">
+						<input type="password" name="password" placeholder="Password" class="form-control" required="required" style="font-size: 15px;">
 					</div>
 					<!-- <div class="checkbox">
 						<label>
@@ -34,8 +41,8 @@
 						</label>
 					</div> -->
 					<div class="form-login">
-						<button>Sign up</button>
-						<p>Already Have account? <a href="login.html">Login</a></p>
+						<button type="submit">Sign up</button>
+						<p>Already Have account? <a href="{{ url_for('login') }}">Login</a></p>
 					</div>
 				</form>
 			</div>
